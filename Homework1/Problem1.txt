@@ -1,1 +1,2 @@
-* master d5416bd Rename Homework 1/blank to Homework1/blank
+* HW1    5c42955 Removed blank and finished Problem1
+  master 5c42955 Removed blank and finished Problem1
