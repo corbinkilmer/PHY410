@@ -1,22 +1,18 @@
 The two's complement of a number can be determined by 2^n - N where N is the number in base 10 and n is the number of bits required to express N in base 2.
 
-a) 10 requires 4 bits but 5 is required for the negative sign so
-2^5 - 10 = 22 which is 10110
+a) 10 is positive so just same as binary:
+01010
 
-b)436 requires 10 bits so
-2^10 - 436 = 588 is 1001001100
+b)same as part a:
+0110110100
 
-A better method with larger numbers is to take the one's complement then add one
+c) 1024's two's complement notation: 010000000000
 
-c) 1024 in binary is 010000000000
-two's complement: 101111111111 + 1 = 110000000000
+For negative number's two's complement notation requires taking the one's complement of the absolute value then adding 1.
 
-d)two's complement of 13 is: 10011
-so -13's two's complement is 01101
+d)13 in binary is 01101 so -13's twos complement representation is 10011
 
 e)1023 is 01111111111 in binary
-so 10000000001 is 1023's two's complement so -1023 two's complement is
-01111111111
+so 10000000001 is -1023 in two's complement notation
 
-f)1024 two's complement from part c is 110000000000 so -1024 two's complement 
-is 010000000000
+f)-1024 two's complement representation is 110000000000 using the result we obtained in part c
