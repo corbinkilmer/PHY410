@@ -11,6 +11,10 @@ int main(){
   std::cin >> x2;
   std::cout << "y2:" << std::endl;
   std::cin >> y2;
+  if (x2 - x1 == 0){
+    std::cout << "The slope is undefined!";
+      }
+  else {
   float midx = (x1 + x2)/2;
   float midy = (y1 + y2)/2;
   float m = (y2 - y1)/(x2 - x1);
@@ -25,5 +29,6 @@ int main(){
  << std::endl;
   std::cout << "The equation the the line perpendicular through (" << x1
 	    << "," << y1 << ") is y= " << mperp << "x + " << bperp << std::endl;
+  }
   return 0;
 }
