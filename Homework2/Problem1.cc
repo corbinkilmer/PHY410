@@ -1,7 +1,9 @@
 #include <iostream>
+#include <cmath>
+#include <limits>
 
 int main(){
-  int x1, y1, x2, y2;
+  float x1, y1, x2, y2;
   std::cout << "Enter two points in the form (x1, y1, x2, y2):" << std::endl;
   std::cout << "x1:" << std::endl;
   std::cin >> x1;
@@ -11,9 +13,9 @@ int main(){
   std::cin >> x2;
   std::cout << "y2:" << std::endl;
   std::cin >> y2;
-  if (x2 - x1 == 0){
-    std::cout << "The slope is undefined!";
-      }
+  if (std::abs(x2 - x1) < std::numeric_limits<float>::epsilon() ){
+    std::cout << "Choose new points" << std::endl;
+  }
   else {
   float midx = (x1 + x2)/2;
   float midy = (y1 + y2)/2;
