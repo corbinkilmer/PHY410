@@ -14,7 +14,7 @@ int main(){
   std::cout << "y2:" << std::endl;
   std::cin >> y2;
   if (std::abs(x2 - x1) < std::numeric_limits<float>::epsilon() ){
-    std::cout << "Choose new points" << std::endl;
+    std::cout << "Choose new points!" << std::endl;
   }
   else {
   float midx = (x1 + x2)/2;
