@@ -20,7 +20,7 @@ double calculate_average(std::vector<StudentRecord>* input){
 int main(int argc, char * argv[]){
     std::ifstream in(argv[1]);
     std::string line;
-    int total;
+    int total, index;
     double average, sum=0.0;
     std::vector<StudentRecord> classvec;
     //Getting each line then delimiting by commas once \n's are taken care of
@@ -34,15 +34,9 @@ int main(int argc, char * argv[]){
     else{break;}
     }
 
-    if(argv[0] == "average"){
     std::vector<StudentRecord>* pclassvec = &classvec;
     //Initialize pointer to vector like hw problem requests
     average = calculate_average(pclassvec);
     std::cout << "The average score is:" << average << std::endl;
-    }
-
-    else if(argv[0] == "print_value"){
-
-    }
     return 0;
 }
