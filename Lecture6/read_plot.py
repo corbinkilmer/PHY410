@@ -19,7 +19,10 @@ def read_plot(filename) :
         y = []
         for line in lines :
             words = line.split()
-            ix, iy = [float(s) for s in words]
+            #ix, iy = [float(s) for s in words]
+            #print(words)
+            ix = float(words[0])
+            iy = float(words[1])
             x.append( ix )
             y.append( iy )
         return x,y

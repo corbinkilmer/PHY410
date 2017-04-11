@@ -122,11 +122,11 @@ int main()
 
     const double pi = 4 * atan(1.0);
     const complex<double> i(0.0, 1.0);
-    const int N = 256;                   // number of transform points
+    const int N = 708;                   // number of transform points
  
     vector< complex<double> > data(N);
 
-    string file_name("co2_mm_mlo.txt");
+    string file_name("co2_mm_mlo2.txt");
     // read the data file and
     ifstream data_file(file_name.c_str());
     if (data_file.fail()) {
@@ -145,7 +145,7 @@ int main()
 	  sline >> year >> month >> date >> average >> interp >> trend >> days;
 	  //std::cout << "read : date, interp = " << date << ", " << interp << endl;
 
-	  data[j] = interp; 
+	  data[j] = trend; 
 	  ++j; 
 	}
     }
@@ -156,7 +156,7 @@ int main()
     vector< complex<double> > Pinv = recursive_inverse_transform( P );
 
     ofstream file; 
-    file_name = "fft_co2.data";
+    file_name = "fft_co2_student.data";
     file.open(file_name.c_str());
     for (int j = 0; j < P.size(); j++) {
         double ang_freq = j;
