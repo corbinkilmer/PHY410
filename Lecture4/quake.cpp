@@ -19,7 +19,7 @@ int main()
 
     // define a histogram to store the data
     int bins = 100;
-    double M_min = 1.0, M_max = 10.0;
+    double M_min = 2.0, M_max = 10.0;
     double dM = (M_max - M_min) / bins;
     vector<double> M(bins), N(bins);
     for (int i = 0; i < bins; i++)
