@@ -1,10 +1,10 @@
 import matplotlib.pyplot as plt
 
-from fft import fft
+from numpy.fft import fft,ifft
 from numpy import array
 import math
 
-plotfirst = True
+plotfirst = False
 
 if plotfirst == True : 
     # make some fake data :
@@ -38,7 +38,7 @@ else :
     lines = file.readlines()
     file.close()
     print ' read', len(lines), 'lines from', data_file_name
-
+    window = True
     yinput = []
     xinput = []
 
@@ -53,9 +53,27 @@ else :
             except ValueError :
                 print 'bad data:',line
 
-    y = array( yinput[0:256] ) 
+N = len(yinput)
+log2N = math.log(N, 2)
+if log2N - int(log2N) > 0.0 :
+    print 'Padding with zeros!'
+    pads = [300.0] * (pow(2, int(log2N)+1) - N)
+    yinput = yinput + pads
+    N = len(yinput)
+    print 'Padded : '
+    print len(yinput)
+    # Apply a window to reduce ringing from the 2^n cutoff
+    if window : 
+        for iy in xrange(len(yinput)) :
+            yinput[iy] = yinput[iy] * (0.5 - 0.5 * math.cos(2*math.pi*iy/float(N-1)))
+
+
+
+
+
+    y = array( yinput[0:(N-1)] ) 
     x = array([ float(i) for i in xrange(len(y)) ] )
-    Y = fft(y)
+    Y = fft(y)    
 
     Yre = [math.sqrt(Y[i].real**2+Y[i].imag**2) for i in xrange(len(Y))]
 
