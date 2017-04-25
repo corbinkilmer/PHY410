@@ -3,11 +3,12 @@
 using namespace std;
 
 double f(double x) {
-    return exp(x) * log(x) - x * x;
+  //    return exp(x) * log(x) - x * x;
+  return tan(x);
 }
  
 int main() {
-    cout << " Algorithms for root of exp(x)*log(x) - x*x\n"
+    cout << " Algorithms for root of tan(x)\n"
          << " ------------------------------------------------\n";
  
     cout << " 1. Simple search\n"

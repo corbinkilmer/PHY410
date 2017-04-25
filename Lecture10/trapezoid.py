@@ -5,7 +5,7 @@ def trapezoid(f, a, b, n):
     the composite trapezoidal rule, using n subintervals.
     From http://en.wikipedia.org/wiki/Trapezoidal_rule
     """
-    h = (b - a) / n
+    h = float(b - a) / float(n)
     s = f(a) + f(b)
     for i in xrange(1, n):
         s += 2 * f(a + i * h)
@@ -19,7 +19,7 @@ def adaptive_trapezoid(f, a, b, acc, output=False):
     """
     
     old_s = -1e-30
-    h = b - a
+    h = float(b - a)
     n = 1
     s = (f(a) + f(b)) / 2
     if output == True : 

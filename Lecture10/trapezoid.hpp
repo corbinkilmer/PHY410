@@ -1,6 +1,7 @@
 #include <iostream>
 #include <math.h>
 #include <assert.h>
+#include <stdlib.h>
 
 //Approximates the definite integral of f from a to b by
 //the composite trapezoidal rule, using n subintervals.

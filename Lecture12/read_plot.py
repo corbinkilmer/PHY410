@@ -1,4 +1,6 @@
 import math
+import sys
+import matplotlib.pyplot as plt
 
 def read_plot(filename) :
     """This is a simple function that can be used to
@@ -28,3 +30,6 @@ def read_plot(filename) :
         print 'Error in read_plot. Returning None'
         return None
 
+[x,y]= read_plot("trajfile_cpp_"+sys.argv[1]+".data")
+plt.plot(x,y)
+plt.show()

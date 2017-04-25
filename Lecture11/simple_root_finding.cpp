@@ -4,7 +4,8 @@
 using namespace std;
 
 double f(double x) {
-    return exp(x) * log(x) - x * x;
+  //    return exp(x) * log(x) - x * x;
+  return tan(x);
 }
 
 void print(int step, double x, double dx) {

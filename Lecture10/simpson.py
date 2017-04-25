@@ -5,7 +5,7 @@ def simpson(f, a, b, n):
     the composite Simpson's rule, using n subintervals.
     From http://en.wikipedia.org/wiki/Simpson's_rule
     """
-    h = (b - a) / n
+    h = float(b - a) / float(n)
     s = f(a) + f(b)
  
     for i in range(1, n, 2):
