@@ -6,7 +6,7 @@ CC=g++
 CFLAGS=-c -Wall
 LDFLAGS=-I$(CPT_PATH) -L$(CPT_PATH) -lcpt
 
-all: na2cl2
+all: na2cl2 Problem2
 
 $(SRC): $(SRC).o
 	$(CC) $(LDFLAGS) $(SRC).o -o $(SRC)
